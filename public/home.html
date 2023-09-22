@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OurSecret - Perfumes</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="css/home.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="images/RS_logo_final.png" alt="OuRSecret" width="8%" height="8%">
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse align-items-left" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ContactUs.html">Contact Us</a>
+            </li>
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li> -->
+            <!-- <li class="nav-item">
+              <i class='bx bxs-cart-alt' id="cart-icon" data-quantity="0"></i>
+            </li> -->
+          
+          </ul>
+          <!-- <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form> -->
+        </div>
+        <i class='bx bxs-cart-alt' id="cart-icon" data-quantity="0"></i>
+        <!--  NAVBAR END-->
+        <!-- cart -->
+        <div class="cart">
+          <h2 class="cart-title">Your Cart</h2>
+          <!-- content -->
+          <div class="cart-content">
+            <!-- <div class="cart-box">
+              <img src="images/Allure.jpg" alt="" class="cart-img">
+            <div class="detail-box">
+              <div class="cart-product-title">Product Perfume</div>
+              <div class="cart-price">₹50</div>
+              <input type="number" name="" id="" value="1" class="cart-quantity">
+            </div>
+            <!Remove item-->
+            <!-- <i class='bx bx-trash cart-remove' ></i> -->
+            <!-- </div> --> 
+          </div>
+          <!--Total-->
+          <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price">₹0</div>
+          </div>
+          <button type="button" class="btn-buy">Pay Now</button>
+        <!--Close cart-->
+        <i class='bx bx-x-circle' id="close-cart"></i>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        
+        <img src="images/Beige Modern Elegant Personal LinkedIn Banner.png" alt="...">
+      </div>
+      <div class="carousel-item">
+        
+        <img src="images/Beige Modern Elegant Personal LinkedIn Banner.png" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="images/Beige Modern Elegant Personal LinkedIn Banner.png" alt="...">
+        
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <br>
+  <div class="main-title">
+    <h1 id="main-title" align="center"></h1>
+  </div>
+
+  <div class="box">
+    <div class="box-sm unisex"></div>
+    <div class="box-sm men"></div>
+    <div class="box-sm women "></div>
+    <div class="box-sm reviews "></div>
+    <div class="box-sm social-links "></div>
+    <div class="box-sm account"></div>
+  </div>
+
+
+  <!--Starting the listing of items-->
+<section class="shop-container">
+<h2 class="section-title" align="center">Shop Products</h2>
+<div class="allCards">             <!--this should go in media query to make it responsive-->
+  <div class="card" data-card-title="Jasmine Noir" >
+    <img src="images/JasmineNoir.jpg" class="card-img-top" alt="Jasmine Noir">
+    <div class="card-body">
+      <h5 class="card-title">Jasmine Noir</h5>
+      <h6 class="item-price">₹1500</h6>
+      <p class="card-text">description would go here</p>
+    </div>
+    <div class="card-body">
+      <i class='bx bx-cart-add add-to-cart' ></i>
+      <i class='bx bx-like like-item' ></i>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;" data-card-title="Allure">
+    <img src="images/Allure.jpg" class="card-img-top" alt="Allure">
+    <div class="card-body">
+      <h5 class="card-title">Allure</h5>
+      <h6 class="item-price">₹1500</h6>
+      <p class="card-text">description would go here</p>
+    </div>
+    <div class="card-body">
+      <i class='bx bx-cart-add add-to-cart' ></i>
+      <i class='bx bx-like like-item' ></i>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;" data-card-title="Creed">
+    <img src="images/Creed.jpg" class="card-img-top" alt="Creed">
+    <div class="card-body">
+      <h5 class="card-title">Creed</h5>
+      <h6 class="item-price">₹1500</h6>
+      <p class="card-text">description would go here</p>
+    </div>
+    <div class="card-body">
+      <i class='bx bx-cart-add add-to-cart' ></i>
+      <i class='bx bx-like like-item' ></i>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;" data-card-title="Obsession">
+    <img src="images/Obsession.jpg" class="card-img-top" alt="Obsession">
+    <div class="card-body">
+      <h5 class="card-title">Obsession</h5>
+      <h6 class="item-price">₹1500</h6>
+      <p class="card-text">description would go here</p>
+    </div>
+    <div class="card-body">
+      <i class='bx bx-cart-add add-to-cart' ></i>
+      <i class='bx bx-like like-item' ></i>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;" data-card-title="Bloom">
+    <img src="images/Bloom.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Bloom</h5>
+      <h6 class="item-price">₹1500</h6>
+      <p class="card-text">description would go here</p>
+    </div>
+    <div class="card-body">
+      <i class='bx bx-cart-add add-to-cart' ></i>
+      <i class='bx bx-like like-item' ></i>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;" data-card-title="Intense Addiction">
+    <img src="images/Intense.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Intense Addiction</h5>
+      <h6 class="item-price">₹1500</h6>
+      <p class="card-text">description would go here</p>
+    </div>
+    <div class="card-body">
+      <i class='bx bx-cart-add add-to-cart' ></i>
+      <i class='bx bx-like like-item' ></i>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;" data-card-title="Aqua Devil">
+    <img src="images/Aqua.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Aqua Devil</h5>
+      <h6 class="item-price">₹1500</h6>
+      <p class="card-text">description would go here</p>
+    </div>
+    <div class="card-body">
+      <i class='bx bx-cart-add add-to-cart' ></i>
+      <i class='bx bx-like like-item' ></i>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;" data-card-title="Classic Kool">
+    <img src="images/Ck.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Classic Kool</h5>
+      <h6 class="item-price">₹1500</h6>
+      <p class="card-text">description would go here</p>
+    </div>
+    <div class="card-body">
+      <i class='bx bx-cart-add add-to-cart' ></i>
+      <i class='bx bx-like like-item' ></i>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;" data-card-title="Vanity Affair">
+    <img src="images/Vanity.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Vanity Affair</h5>
+      <h6 class="item-price">₹1500</h6>
+      <p class="card-text">description would go here</p>
+    </div>
+    <div class="card-body">
+      <i class='bx bx-cart-add add-to-cart' ></i>
+      <i class='bx bx-like like-item' ></i>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;" data-card-title="Oud Royale">
+    <img src="images/OudRoyale.jpeg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Oud Royale</h5>
+      <h6 class="item-price">₹1500</h6>
+      <p class="card-text">description would go here</p>
+    </div>
+    <div class="card-body">
+      <i class='bx bx-cart-add add-to-cart' ></i>
+      <i class='bx bx-like like-item' ></i>
+    </div>
+  </div>  <div class="card" style="width: 18rem;" data-card-title="Bombshell">
+    <img src="images/Bombshell.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Bombshell</h5>
+      <h6 class="item-price">₹1500</h6>
+      <p class="card-text">description would go here</p>
+    </div>
+    <div class="card-body">
+      <i class='bx bx-cart-add add-to-cart' ></i>
+      <i class='bx bx-like like-item' ></i>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;" data-card-title="Willow">
+    <img src="images/Willow.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Willow</h5>
+      <h6 class="item-price">₹1500</h6>
+      <p class="card-text">description would go here</p>
+    </div>
+    <div class="card-body">
+      <i class='bx bx-cart-add add-to-cart' ></i>
+      <i class='bx bx-like like-item' ></i>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;" data-card-title="Arabian Oud">
+    <img src="images/ArabianOud.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Arabian Oud</h5>
+      <h6 class="item-price">₹1500</h6>
+      <p class="card-text">description would go here</p>
+    </div>
+    <div class="card-body">
+      <i class='bx bx-cart-add add-to-cart' ></i>
+      <i class='bx bx-like like-item' ></i>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;" data-card-title="Secret Wish">
+    <img src="images/SecretWish.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Secret Wish</h5>
+      <h6 class="item-price">₹1500</h6>
+      <p class="card-text">description would go here</p>
+    </div>
+    <div class="card-body">
+      <i class='bx bx-cart-add add-to-cart' ></i>
+      <i class='bx bx-like like-item' ></i>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;" data-card-title="Paradise">
+    <img src="images/Paradise.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Paradise</h5>
+      <h6 class="item-price">₹1500</h6>
+      <p class="card-text">description would go here</p>
+    </div>
+    <div class="card-body">
+      <i class='bx bx-cart-add add-to-cart' ></i>
+      <i class='bx bx-like like-item' ></i>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;" data-card-title="Enchanted">
+    <img src="images/Vanity.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Enchanted</h5>
+      <h6 class="item-price">₹1500</h6>
+      <p class="card-text">description would go here</p>
+    </div>
+    <div class="card-body">
+      <i class='bx bx-cart-add add-to-cart' ></i>
+      <i class='bx bx-like like-item' ></i>
+    </div>
+  </div>
+</div>
+
+<div class="card expanded-card overflow-auto" id="expanded-card">
+  <img id="expanded-card-img" src="" class="card-img-top" alt="...">
+  <div class="card-body">
+  <h2 id="expanded-title">Expanded Card Title</h2>
+  <p id="expanded-description">Expanded Card Description</p></div>
+  
+</div>
+</section>
+
+  <footer>
+    <p>Copyright ©2022 OurSecret</p>
+  </footer>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <script src="js/expandedCard.js"></script>
+  <script src="js/cart.js"></script>
+  <script>
+    const div = document.querySelector(".main-title");
+    const text = "OuRSecret: Captivating Hearts, One Spray at a Time"
+    function textTypingEffect(element,text,i=0){
+      if(i===0){
+        element.textContent='';
+      }
+      element.textContent+=text[i];
+      if(i === text.length-1){
+        return;
+      }
+      setTimeout(()=>textTypingEffect(element,text,i+1),20);
+    }
+    textTypingEffect(div,text);
+ </script>
+</body>
+</html>

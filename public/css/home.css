@@ -1,0 +1,544 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+  /* background-image: url('images/pinkbg.jpg'); */
+   background-size: cover; /* Adjust as needed */
+  background-repeat: no-repeat; /* Adjust as needed */
+  background-position: center center; /* Adjust as needed */
+  /* background-position: 100%; */
+  background-color: rgba(25, 21, 23, 0.896);
+}
+section{
+  padding: 0 2rem 3rem;
+}
+.section-title{
+  font-size: 34px;
+  align-self: center;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  color: #e3e710;
+
+}
+.main-title{
+  color:#11ABBA;
+  font-size: 36px;
+  text-align: center;
+}
+
+/* Header Styles */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 1px 4px hsla(0, 0%, 98%, 0.1);
+  z-index: 100;
+  background-color: #11ABBA;
+  color: white;
+  padding: 0.5em;
+}
+.navbar{
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1% 0;
+
+}
+#cart-icon{
+  position: relative;
+  font-size: 01.8rem;
+  color: black;
+  cursor: pointer;
+  /* padding-right: 2%; */
+}
+#cart-icon[data-quantity="0"]::after{
+  contain: "";
+}
+#cart-icon[data-quantity]::after{
+  content:attr(data-quantity);
+  position: absolute;
+  top: 0;
+  right: -12px;
+  /* padding-right: 20px; */
+  width: 70%;
+  height: 70%;
+  background: #11ABBA;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart{
+  position:fixed;
+  top: 0;
+  right: -100%;
+  width: 360px;
+  min-height: 100vh;
+  padding: 20px;
+  background: #000000;
+  box-shadow: -2px 0 4px hsl(0, 4%, 15% / 10%);
+  transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -moz-transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -ms-transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -o-transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.cart.active{
+  right:0;
+  transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -moz-transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -ms-transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -o-transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.card-title{
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+.total{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+  border-top: 1px solid #11ABBA;
+}
+.total-title{
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+.total-price{
+  font-size: 1.2rem;
+  margin: 1rem 0 0 0.7rem;
+}
+.btn-buy{
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem auto 0 auto;
+  padding: 12px 20px;
+  width: 50%;
+  text-align: center;
+  border: none;
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+  background: #11ABBA;
+  color: #000000;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 500;
+  cursor: pointer;
+
+}
+#close-cart{
+  position: absolute;
+  top: 1rem;
+  right: 0.8rem ;
+  font-size: 1.5rem;
+  color:#11ABBA;
+  cursor: pointer;
+}
+.cart-box{
+  display: grid;
+  grid-template-columns: 32% 50% 18%;
+  align-items: center;
+  gap:1rem;
+  margin-top: 1rem;
+}
+.cart-img{
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  padding: 10px;
+  object-position: center;
+
+}
+.detail-box{
+  display: grid;
+  row-gap: 0.5rem;
+}
+.cart-product-title{
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.cart-price{
+  font-weight: 500;
+}
+.cart-quantity{
+  border: 1px solid #000000;
+  outline-color: #fff;
+  width:2.8rem;
+  text-align: center;
+  font-size: 1rem;
+  border-radius:4px;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  -ms-border-radius:4px;
+  -o-border-radius:4px;
+}
+.cart-remove{
+  font-size: 24px;
+  color:rgb(255, 0, 0);
+  cursor: pointer;
+  
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+header nav ul li {
+  margin-right: 1em;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+/* Default transition duration for the carousel */
+.carousel-inner .carousel-item {
+  transition: transform 0.3s ease-in-out;
+  -webkit-transition: transform 0.3s ease-in-out;
+  -moz-transition: transform 0.3s ease-in-out;
+  -ms-transition: transform 0.3s ease-in-out;
+  -o-transition: transform 0.3s ease-in-out;
+}
+
+/* Media query for users with reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  /* Override the transition duration for reduced motion */
+  .carousel-inner .carousel-item {
+    transition-duration: 4s; /* Adjust the duration as needed */
+  }
+}
+
+/* In the code above, we first set the default transition duration for the carousel to 0.6 seconds. Then, within the @media (prefers-reduced-motion: reduce) media query, we override the transition duration to 4 seconds (you can adjust this value to make it slower or faster) for users who have reduced motion preferences. */
+
+/* This way, when a user with reduced motion preferences accesses your website, the carousel will slide more slowly as specified in the media query. Users without reduced motion preferences will still see the default transition duration. */
+
+
+
+
+
+
+#AutoplayCarousel .carousel-inner .carousel-item img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+#AutoplayCarousel.carousel .carousel-inner .carousel-item  {
+  /* Adjust the width as needed for smaller screens */
+  height: auto;
+  width: 80%;
+
+}
+/* Media query for screens with a maximum width of 768px */
+@media only screen and (max-width: 768px) {
+  #AutoplayCarousel.carousel .carousel-inner .carousel-item  {
+    /* Adjust the width as needed for smaller screens */
+    width: 80%;
+  }
+  .navbar{
+    height: 60%
+  }
+}
+
+/* Media query for screens with a maximum width of 576px */
+@media only screen and (max-width: 576px) {
+  #AutoplayCarousel.carousel .carousel-inner .carousel-item  {
+    /* Adjust the width as needed for even smaller screens */
+    width: 90%;
+  }
+}
+
+#AutoplayCarousel .carousel-control-prev, #AutoplayCarousel .carousel-control-next {
+  background-color: #fff;
+  width: 15%;
+  opacity: 0.5;
+  transition: opacity 0.15s ease;
+  -webkit-transition: opacity 0.15s ease;
+  -moz-transition: opacity 0.15s ease;
+  -ms-transition: opacity 0.15s ease;
+  -o-transition: opacity 0.15s ease;
+}
+#AutoplayCarousel .carousel-control-prev:hover, #AutoplayCarousel .carousel-control-next:hover {
+  opacity: 0.9;
+}
+#AutoplayCarousel .carousel-control-prev.carousel-control-prev, #AutoplayCarousel .carousel-control-next.carousel-control-prev {
+  left: 10px;
+}
+#AutoplayCarousel .carousel-control-prev.carousel-control-next, #AutoplayCarousel .carousel-control-next.carousel-control-next {
+  right: 10px;
+}
+#AutoplayCarousel .carousel-indicators li {
+  width: 30px;
+  height: 3px;
+  margin-right: 3px;
+  background-color: transparent;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.6s ease;
+}
+
+/* Media query for screens with a maximum width of 768px */
+@media (max-width: 768px) {
+  #AutoplayCarousel .carousel-indicators li {
+    /* Adjust the size as needed for smaller screens */
+    width: 20px;
+    height: 2px;
+    margin-right: 2px;
+  }
+}
+
+/* Media query for screens with a maximum width of 576px */
+@media (max-width: 576px) {
+  #AutoplayCarousel .carousel-indicators li {
+    /* Further adjust the size for even smaller screens */
+    width: 15px;
+    height: 1.5px;
+    margin-right: 1.5px;
+  }
+}
+
+
+
+
+
+
+#AutoplayCarousel .carousel-indicators li.active {
+  background-color: #fff;
+  opacity: 1;
+}
+#AutoplayCarousel .carousel-caption {
+  width: 70%;
+  color: #fff;
+  padding: 1.25rem 0;
+  margin: 0 auto;
+  text-align: center;
+}
+#AutoplayCarousel .carousel-control-prev-icon, #AutoplayCarousel .carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#fff'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>");
+  width: 2rem;
+  height: 2rem;
+}
+
+
+.box {
+  display: flex;
+  width: 100%;
+  height: 8px;
+  margin: 5px 0px 20px 0px;
+}
+
+.box-sm {
+  height: 8px;
+  margin: 0;
+  flex-grow: 1;
+  transition: all .8s ease-in-out;
+  cursor: pointer;
+}
+
+/* Growing the width of box, when hover using flex-grow property */
+.box-sm:hover {
+  flex-grow: 12;
+}
+
+
+
+
+
+
+
+.unisex {
+  background-image:linear-gradient(131deg, #ADE0EC, #11ABBA, #11ABBA, #11ABBA);
+}
+
+.men {
+  background-color: #ffffff;
+}
+
+.women {
+  background-image:linear-gradient(131deg, #ADE0EC, #11ABBA, #11ABBA, #11ABBA);
+}
+
+.reviews {
+  background-color: #ffffff;
+}
+
+.social-links {
+  background-image:linear-gradient(131deg, #ADE0EC, #11ABBA, #11ABBA, #11ABBA);
+}
+
+.account {
+  background-color: #ffffff;
+}
+
+/*CSS FOR CARDS START HERE*/
+
+
+.allCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Ensures even spacing between cards */
+  gap: 20px; /* Adjust the gap as needed */
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.card {
+  flex-basis: calc(30% - 20px);
+  /*25%widthwithgapaccountedfor*//*Othercardstyles*/border-radius:5px ;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  -ms-border-radius:5px;
+  -o-border-radius:5px;
+  transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -webkit-transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -moz-transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -ms-transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  -o-transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.card-img-top {
+  width: 100%;
+  /*Setthewidthto100%tomaketheimageresponsive*/height: auto;
+  border-radius:5px ;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  -ms-border-radius:5px;
+  -o-border-radius:5px;
+  margin-bottom:0.5rem
+}
+
+.add-to-cart{
+  position:relative;
+  bottom: 10px;
+  background:#9E44C4;
+  color: #000000;
+  padding: 8px;
+  font-size:1.2rem;
+  border-radius:50% ;
+  -webkit-border-radius:50% ;
+  -moz-border-radius:50% ;
+  -ms-border-radius:50% ;
+  -o-border-radius:50% ;
+  cursor: pointer;
+}
+.like-item{
+  position:relative;
+  bottom: 10px;
+  background:#9E44C4;
+  color: #000000;
+  padding: 8px;
+  font-size:1.2rem;
+  border-radius:50% ;
+  -webkit-border-radius:50% ;
+  -moz-border-radius:50% ;
+  -ms-border-radius:50% ;
+  -o-border-radius:50% ;
+  cursor: pointer;
+}
+.add-to-cart:hover{
+  background: hsl(174, 76%, 44%);
+}
+.like-item:hover{
+  background: hsl(174, 76%, 44%);
+}
+
+/* Media query for laptop screens (four cards in a row) */
+@media (min-width: 992px) {
+  .cart{
+    width:320px;
+  }
+  .card {
+    flex-basis: calc(25% - 20px); /* Adjust as needed */
+  }
+}
+
+/* Media query for tablet screens (two cards in a row) */
+@media (max-width: 991px) {
+  .cart{
+    width: 550px;
+  }
+  .card {
+    flex-basis: calc(50% - 20px); /* Adjust as needed */
+  }
+}
+
+/* Media query for mobile screens (one card in a row) */
+@media (max-width: 576px) {
+  .cart{
+    width:100%
+  }
+  .card {
+    flex-basis: calc(50% - 20px); /* Adjust as needed */
+  }
+}
+
+
+
+.expanded-card{
+    position: fixed;
+    display:none;
+    top: 50%;
+    /*Positionfromthetop,adjustasneeded*/left: 50%;
+    /*Positionfromtheleft,adjustasneeded*/transform: translate(-50%, -50%);
+    /*Centerthecardbothhorizontallyandvertically*/width: 40%;
+    /*Adjustthecard'swidthasneeded*/height: auto;
+    /*Allowthecard'sheighttoadjustbasedoncontent*/background-color: rgba(167, 195, 227, 0.716);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+    flex-direction: column;
+    /*Centercontentverticallywithinthecard*/align-items: center;
+    /*Centercontenthorizontallywithinthecard*/padding: 20px;
+    border-radius:30px;
+    -webkit-border-radius:30px;
+    -moz-border-radius:30px;
+    -ms-border-radius:30px;
+    -o-border-radius:30px;
+   
+}
+@media (min-width: 992px) {
+  .expanded-card {
+    width: 40%;
+    height: auto;
+  }
+}
+
+/* Media query for tablet screens (two cards in a row) */
+@media (max-width: 991px) {
+  .expanded-card {
+    width: 50;
+    height: auto;
+  }
+}
+
+/* Media query for mobile screens (one card in a row) */
+@media (max-width: 576px) {
+  .expanded-card {
+    width: 70%;
+    height: auto;
+  }
+}
+
