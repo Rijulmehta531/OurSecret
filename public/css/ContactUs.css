@@ -1,28 +1,30 @@
 body{
-  background-color: #000000;
-  background-image: url(pinkbg.jpg);
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  background-size: contain; /* Adjust as needed */
+  background-repeat: repeat; /* Adjust as needed */
+  background-position: center center; /* Adjust as needed */
 }
 header {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
   height: auto;
   box-shadow: 0 1px 4px hsla(0, 0%, 98%, 0.1);
   z-index: 100;
-  background-color: #11ABBA;
-  color: white;
+  /* background-color: #DDBF55; */
+  /* color: #DDBF55; */
   padding: 0.5em;
 }
 
+
 .navbar{
+  width:100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1% 0;
+  background-color: #DDBF55;
+  color:#DDBF55;
  
 }
 @media (min-width: 992px) {
@@ -163,4 +165,9 @@ form {
   box-shadow: 0 0.5em 0.5em -0.4em #08d6e9;
   background-size: 100% 100%;
   transform: translateY(-0.15em);
+}
+
+/* Terms and Services css */
+.terms{
+  color: #f2f6f8;
 }
