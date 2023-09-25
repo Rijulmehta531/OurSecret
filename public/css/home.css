@@ -11,6 +11,7 @@ body {
    background-size: contain; /* Adjust as needed */
   background-repeat: repeat; /* Adjust as needed */
   background-position: center center; /* Adjust as needed */
+  background-attachment: fixed;
   /* background-position: 100%; */
   background-color: rgba(25, 21, 23, 0.896);
 }
@@ -233,7 +234,7 @@ header nav ul li a {
 @media (prefers-reduced-motion: reduce) {
   /* Override the transition duration for reduced motion */
   .carousel-inner .carousel-item {
-    transition-duration: 4s; /* Adjust the duration as needed */
+    transition-duration: 2s; /* Adjust the duration as needed */
   }
 }
 

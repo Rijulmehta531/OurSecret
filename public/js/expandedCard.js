@@ -6,6 +6,7 @@ const expandedTitle = document.getElementById('expanded-title');
 const expandedDescription = document.getElementById('expanded-description');
 const expandedCardImage = document.getElementById('expanded-card-img');
 
+
 const perfumeData = {
     'Jasmine Noir': {
         description: 'Jasmine Noir is a classic choice for those who appreciate the timeless beauty of floral perfumes. It\'s a scent that evokes images of blooming gardens, warm summer evenings, and elegant bouquets. The jasmine note, with its rich and opulent character, is often associated with sophistication and femininity.',
@@ -126,11 +127,16 @@ const perfumeData = {
 
 
 cards.forEach(card => {
-   card.addEventListener('click', () => {
+   card.addEventListener('click', event => {
     console.log('On click called');
+
+    if (event.target.classList.contains('add-to-cart') || event.target.classList.contains('like-item')) {
+        return; // Skip the handler for these buttons
+      }
 
     const cardTitle = card.getAttribute('data-card-title'); // Get the card's title from the data attribute
        expandedTitle.textContent = cardTitle;
+   
       // Get the perfume data from the object based on the card title
     const perfume = perfumeData[cardTitle];
 
@@ -153,8 +159,9 @@ cards.forEach(card => {
        
    });
 
-   card.addEventListener('mouseleave', () => {
+   expandedCard.addEventListener('mouseleave', () => {
+       //expandedCard.style.display = 'none';
        expandedCard.style.display = 'none';
-      
+
    });
 });
