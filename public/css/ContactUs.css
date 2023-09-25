@@ -169,5 +169,17 @@ form {
 
 /* Terms and Services css */
 .terms{
+  margin-left:100px;
+  margin-right: 100px;
   color: #f2f6f8;
+}
+.privacy-policy{
+  margin-left:100px;
+  margin-right: 100px;
+  color: #fff;
+}
+.refunds{
+  margin-left:100px;
+  margin-right: 100px;
+  color: #fff;
 }

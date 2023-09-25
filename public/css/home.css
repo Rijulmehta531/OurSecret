@@ -428,9 +428,27 @@ header nav ul li a {
   -moz-transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
   -ms-transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
   -o-transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
-  background-color: #3b3838;
+  background-color: #3b3838;}
+  .card:hover{
+    background-color: aliceblue;
+  }
+  .card:hover .card-title {
+    color: #39038a;
+  }
+ /* Create a pseudo-element for the gradient border */
+.card::before {
+  content: '';
+  position: absolute;
+  top: -4px; /* Adjust to control the thickness of the border */
+  left: -4px; /* Adjust to control the thickness of the border */
+  right: -4px; /* Adjust to control the thickness of the border */
+  bottom: -4px; /* Adjust to control the thickness of the border */
+  border-radius: 25px; /* Should be slightly larger than the card's border-radius */
+  background: linear-gradient(to top, rgb(89, 6, 196), rgb(242, 3, 91)); /* Define your gradient colors and direction */
+  z-index: -1; /* Place the pseudo-element below the card content */
   
 }
+
 .card-img-top {
   width: 100%;
   /*Setthewidthto100%tomaketheimageresponsive*/height: auto;
@@ -441,6 +459,7 @@ header nav ul li a {
   -o-border-radius:20px ;
   margin-bottom:0.5rem;
 }
+
 .card-title{
   color: #fff;
 }

@@ -1,5 +1,6 @@
 
 const cards = document.querySelectorAll('.card');
+
 const expandedCard = document.querySelector('.expanded-card');
 const expandedTitle = document.getElementById('expanded-title');
 const expandedDescription = document.getElementById('expanded-description');
@@ -125,7 +126,8 @@ const perfumeData = {
 
 
 cards.forEach(card => {
-   card.addEventListener('mouseenter', () => {
+   card.addEventListener('click', () => {
+    console.log('On click called');
 
     const cardTitle = card.getAttribute('data-card-title'); // Get the card's title from the data attribute
        expandedTitle.textContent = cardTitle;
