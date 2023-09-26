@@ -53,6 +53,9 @@ app.post('/stripe-checkout', async(req, res)=>{
     const session= await stripeGateway.checkout.sessions.create({
         payment_method_types:["card"],
         mode: "payment",
+        discounts: [{
+            coupon: '1KoFh8KS',
+          }],
         success_url: `${DOMAIN}/success`,
         cancel_url: `${DOMAIN}/cancel`,
         line_items: lineItems,
